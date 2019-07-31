@@ -9,18 +9,21 @@ class CategorySerializer3(ModelSerializer):
         model = GoodsCategory
         fields = "__all__"
 
+
 class CategorySerializer2(ModelSerializer):
     sub_cat = CategorySerializer3(many=True)
+
     class Meta:
         model = GoodsCategory
         fields = "__all__"
+
 
 class CategorySerializer(ModelSerializer):
-    # sub_cat = CategorySerializer2(many=True)
+    sub_cat = CategorySerializer2(many=True)
+
     class Meta:
         model = GoodsCategory
         fields = "__all__"
-
 class GoodsSerializer(ModelSerializer):
     category = CategorySerializer()
     class Meta:

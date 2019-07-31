@@ -26,8 +26,8 @@ import xadmin
 # from MxShop_2.settings import MEDIA_ROOT
 
 router = DefaultRouter()
-router.register(r'goods', GoodsListViewSet, basename='goods')
-router.register(r'categrorys', CategoryViewSet, basename='categrorys')
+router.register(r'goods', GoodsListViewSet, base_name='goods')  # 商品
+router.register(r'categorys', CategoryViewSet, base_name='categorys')  # 商品分类
 # urlpatterns = router.urls
 
 urlpatterns = [

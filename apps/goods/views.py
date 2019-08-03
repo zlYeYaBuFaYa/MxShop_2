@@ -26,7 +26,8 @@ class GoodsListViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     # search_fields = ['name']
     # search_fields = ["name", "goods_brief", "goods.desc"]
     # filterset_class = GoodsFilter
-    search_fields = ('name', 'goods_brief', 'goods_desc')
+    # = 完全匹配 ^ 匹配开头
+    search_fields = ('=name', 'goods_brief', 'goods_desc')
     ordering_fields = ('sold_num', 'shop_price')
     filterset_class = GoodsFilter
 
